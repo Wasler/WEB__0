@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 30px;
+    background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+}
+
+.wrapper{
+    background-color: red;
+    border: 10px dashed black;
+    margin: 200px auto;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+}
+
+.white1{
+    background-color: white;
+    border: 2px solid black;
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.red1{
+    background-color: red;
+    border: 2px solid black;
+    margin: 0px auto;
+    margin: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.white2{
+    background-color: white;
+    border: 2px solid black;
+    margin: 0px auto;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.red2{
+    background-color: red;
+    border: 2px solid black;
+    margin: 0px auto;
+    margin: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

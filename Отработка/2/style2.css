@@ -1,0 +1,20 @@
+table, td{
+    border: 1px solid black; /*налаштування країв: розмір - режим відображення - колір*/
+    font-family: sans-serif; /*Шрифт*/   
+    font-size: 80px; /*Розмір тексту*/
+}
+td{
+    width: 100px; /*ширина*/
+    height: 100px; /*висота*/
+    text-align: center; /*вирівнювання тексту*/
+    background-color: #74ccd4; /* зміна задьного фону*/
+}
+.big{
+    width: 200px; /*ширина*/
+    height: 200px; /*висота*/
+    background-color: #991525; /* зміна задьного фону*/
+    color: white; /*колір тексту*/
+}
+#center{
+    background-color: #fcf9f5;
+}

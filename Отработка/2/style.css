@@ -1,0 +1,9 @@
+/* стилі для Body */
+body{
+    background-color: #9dddec;/*зміна задьного фону*/
+}
+
+h1{
+    color: black; /*колір тексту*/
+    margin: 10px 100px; /*зовнішній*/
+}
