@@ -1,8 +1,7 @@
 $(document).ready(function(){
-    $('#btn1').click(function(){
-        alert("Text: " + $("#test").text());
+    $("#btn").click(function(){
+        let textOfLink = $("#text").val();
+        $("#link").attr("href", "https://" + textOfLink);
+        $("#text").val("");
     });
-    $('#btn2').click(function(){
-        alert("HTML: " + $("#test").html());
-        });
 });

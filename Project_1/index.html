@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test site</title>
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3978_by_Stepro_%28cropped2%29.jpg/330px-2024-08-25_Motorsport%2C_Formel_1%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3978_by_Stepro_%28cropped2%29.jpg" width="150px">
+    
+    
+
+
+    <h1>Леклер, Шарль</h1>
+    <p>Шарль Марк Эрве́ Персива́ль Лекле́р (фр. Charles Marc Hervé Perceval Leclerc; род. 16 октября 1997, Монте-Карло) — автогонщик из Монако, участник</p>
+    <p>чемпионатов мира Формулы-1, пилот команды «Феррари», вице-чемпион сезона 2022 года. Чемпион серии GP3 2016 года и Формулы-2 2017 года.</p>
+    <h2>Биография</h2>
+    <p>Родился 16 октября 1997 года в Монако. Второй из трёх сыновей Эрве Леклера — монегасского предпринимателя, который был картингистом и гонщиком Формулы-3.
+         Старший брат Лоренцо, младший Артур, также автогонщик. Эрве Леклер был тесно знаком с Филиппом Бьянки — отцом гонщика Жюля Бьянки и владельцем картодрома во французской коммуне Бриньоль. На этой трассе Шарль Леклер впервые познакомился с картингом.
+    <p>Однажды Леклер не захотел идти в школу (в Монако родители могут отдавать своих детей в школу уже с трёх лет) и соврал отцу, что заболел.
+       Эрве Леклер решил не оставлять своего сына дома, а взять с собой на заезды в Бриньоле. В тот день Шарль Леклер тренировался на трассе, пока у него не закончилось топливо. По пути домой он сказал отцу: «Это то, чем я хочу заниматься».
+       С 2005 года Леклер стал участвовать в региональных картинговых соревнованиях. Небольшие проекты отца не приносили прибыли, достаточной для финансовой поддержки выступлений его сына. Основным спонсором Леклера в тот момент был его дед, который владел организацией, осуществлявшей деятельность в области пластиковой промышленности. 
+       Но бизнесмену не нравилось увлечение внука, поэтому он перестал поддерживать Леклера, когда тому было 13 лет. Из-за этого гонщик не мог продолжать сезон в картинге и свою карьеру. На помощь ему пришёл его друг и крестный отец Жюль Бьянки, который порекомендовал своему гоночному менеджеру Николя Тодту обратить внимание на Леклера.
+       Тодт решил оплатить ему последние гонки сезона и в будущем продолжить сотрудничество, если Леклер успешно закончит сезон. 
+       В результате Тодт стал его менеджером.</p>
+
+    <table border = 1px>
+        <thead>
+        <tr>
+            <th>Creator</th>
+            <th>Age Creator</th>
+            <th>City Creator</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Temka Hulenko</th>
+                <th>14 year</th>
+                <th>Sumy</th>
+            </tr>
+
+            <button onclick="showMessage()">Button</button>
+            <button onclick="addItem()">Добавить надпись</button>
+
+         
+  <script>
+    function showMessage() {
+      alert("Hi, this is my testing site!!!");
+    }
+  </script>
+
+  <script>
+    const items = [];
+
+    function addItem() {
+      const input = prompt("Введите надпись:");
+      if (input) {
+        items.push(input); 
+        renderList(); 
+      }
+    }
+
+    function renderList() {
+      const list = document.getElementById("output");
+      list.innerHTML = ""; 
+      for (const item of items) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      }
+    }
+  </script>
+
+
+  
+
+<p>Licenced by: Temka Artemka</p>
+        </tbody>
+    </table>
+    <ul id="output"></ul>
+</body>
+</html>
