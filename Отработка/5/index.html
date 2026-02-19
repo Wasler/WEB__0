@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <header class="top">
+            <h1><a href="#">Site them. Me</a></h1>
+        </header>
+
+        <nav class="flex-nav">
+            <a href="#" class="toggleNav">Menu</a>
+            <ul>
+                <li><a href="#">Item 01</a></li>
+                <li><a href="#">Item 02</a></li>
+                <li><a href="#">Item 03</a></li>
+                <li><a href="#">Item 04</a></li>
+                <li><a href="#">Item 05</a></li>
+                <li><a href="#">Item 06</a></li>
+                <li class="social"><a href="#"><i class="bi bi-telegram"></i></a></li>
+                <li class="social"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="social"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                <li class="social"><a href="#"><i class="bi bi-discord"></i></a></li>
+            </ul>
+        </nav>
+
+        <section class="banner">
+            <img src="" alt="">
+        </section>
+
+        <section class="content">
+            <p>Тут могла бути ваша реклама!!!</p>
+            <p>Here could be your advertisement!</p>
+        </section>
+
+        <section class="signup">
+            <form class="signup">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Email address">
+                <input type="submit" value="Sign me up!">
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy Temich</p>
+        </footer>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+        $(function() {
+        $('.toggleNav').on('click', function() {
+        $('.flex-nav ul').toggleClass('open');
+        });
+        });
+        </script>
+
+</body>
+</html>
