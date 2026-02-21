@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+.container{
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    padding: 20px;
+
+}
+
+.slider{
+    width: 500px;
+     margin: 20px;
+     color: red;
+}
+
+.valText{
+    width: 50px;
+    font-size: 50px;
+    text-align: center;
+}
