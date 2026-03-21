@@ -1,0 +1,23 @@
+html{
+    font-weight: 900;
+    font-size: 10px;
+    color: black;
+}
+
+body{
+    margin: 50px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    font-size: 35%;
+    background-color: yellow;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 50px 200px 50px;
+}
