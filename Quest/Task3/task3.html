@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Task 3</title>
+	<link rel="stylesheet" href="task3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="https://raw.githack.com/aterrien/jQuery-Knob/master/dist/jquery.knob.min.js"></script>
+
+	<link rel="stylesheet" href="alertify/alertify.core.css" />
+	<link rel="stylesheet" href="alertify/alertify.default.css" />
+	<script src="alertify/alertify.min.js"></script>
+
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+	<script src="task3.js" defer></script>
+</head>
+
+<body>
+
+
+
+	<div class="wrapper">
+		<h1><i><u>Online-Quest</u></i></h1>
+		<h2>Task 3. Memory Game</h2>
+		<article>
+			<p class="slideRules">Description & Rules ▼</p>
+			<div id="rules">
+				<p>
+				<ul style="list-style: none;">
+					<li>
+						<b>Memory Game</b> - is a game in with you should memorised images and match them.
+					</li>
+					<br>
+					<li>
+						<b>Rules:</b>
+						<ul style="margin-left: 40px">
+							<li>if you click on the board item it whill reveal them image under it</li>
+							<li>if you click on second item and it image isn`t match both will hide</li>
+							<li>if you match two images they will stay revealed</li>
+							<li>After revealed all board, you will finish the quest</li>
+							<li>You will have only 5 minutes to solve this task after pressing the <b>Start</b></li>
+						</ul>
+					</li>
+				</ul>
+				</p>
+			</div>
+		</article>
+
+		<div class="taskProgress">
+			<p>Task progress:</p>
+			<input type="text" value="0" class="progress">
+		</div>
+
+		<div class="timeProgress">
+			<p>Time progress:</p>
+			<input type="text" value="0" class="time">
+		</div>
+
+		<div id="star">
+			<p>Start</p>
+		</div>
+
+		<div class="ganeBoard">
+
+		</div>
+
+		<div id="win">
+			<h1>You Win!!!</h1>
+			<a href="../Task1/task1.html">Go back</a>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

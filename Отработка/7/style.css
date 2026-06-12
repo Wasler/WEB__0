@@ -1,0 +1,21 @@
+body{
+    margin: 50px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    font-size: 35px;
+    background-color: yellow;
+}
+
+.container{
+    max-width: 1400px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 20px;
+    grid-template-rows: repeat(6, 50px);
+}

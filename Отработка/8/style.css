@@ -1,0 +1,247 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.main-grid{
+  display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+}
+
+.shop_header{
+  background-image: url("images/shop_header_back.jpg");
+}
+
+.about_header{
+  background-image: url("images/about_header_back.jpg");
+}
+
+header{
+  background-image: url("images/header_back.jpg");
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .5);
+  grid-column: 1 / -1;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+nav{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.logo{
+  height: 100%;
+}
+
+.menu ul{
+  display: flex;
+  list-style: none;
+}
+
+.menu ul li{
+  padding: 1em 2em;
+}
+
+.menu ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.menu ul li a:hover{
+  color: orange;
+  transition: 0.9s;
+}
+
+.banner{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1{
+  font-size: 72px;
+}
+
+.banner p{
+  font-size: 22px;
+  text-align: center;
+  max-width: 40%;
+  padding: 50px 0;
+}
+
+.description{
+  grid-column: 2 / -2;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 70px 0;
+  padding-right: 15vw;
+}
+
+.contentInfo{
+ grid-column: 2 / -2;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 75px;
+  padding-bottom: 100px;
+}
+
+.contentInfo p{
+  padding: 20px;
+  text-align: center;
+}
+
+.tiles_shop{
+  grid-column: 2 / -2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 100px;
+  margin-bottom: 100px;
+}
+
+.tiles_shop .item_shop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.tiles_shop .item_shop p{
+  text-align: center;
+  margin: 25px;
+}
+
+.tiles_shop .item_shop img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button_shop{
+  background: #000;
+  border-radius: 7px;
+  text-align: 18px;
+  color: white;
+  padding: 10px 50px;
+}
+
+.button_shop:hover{
+  background: #8c6900;
+  transition: 0.9s;
+}
+
+.button{
+  background: #c49300;
+  color: white;
+  padding: 15px 50px;
+}
+
+.button:hover{
+  background: #8c6900;
+  transition: 0.9s;
+}
+
+.clothes{
+  grid-column: 2/-2;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.clothes p{
+  padding: 20px;
+  text-align: center;
+}
+
+.tiles{
+  grid-column: 2/-2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+  margin-bottom: 100px;
+}
+
+.item{
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  overflow: hidden;
+}
+
+.item img{
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item_overley{
+  background: rgba(0, 0, 0, .5);
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  z-index: 2;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.item:hover .item_img{
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+
+footer{
+  grid-column: 1/-1;
+  height: 30vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  padding: 30px 0;
+}
+
+.social_contacts{
+  display: flex;
+  width: 10vw;
+  justify-content: space-around;
+}
+
+.social_contacts a:hover{
+  color: orange;
+  transition: 0.9s;
+}
