@@ -1,17 +1,20 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.home{
+.home {
   width: 100vw;
   max-height: 100vh;
   background: url(images/kosmos_galaktika_siianie_130828_1600x900.jpgs) center/cover no-repeat;
   overflow: hidden;
   position: relative;
 }
-.home::before{
+
+.home::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -21,11 +24,11 @@
   left: 0;
 }
 
-.video_back{
+.video_back {
   padding-bottom: 56.25%;
 }
 
-.home video{
+.home video {
   object-fit: cover;
   position: absolute;
   width: 100%;
@@ -34,7 +37,7 @@
   left: 0;
 }
 
-.video_content{
+.video_content {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -49,7 +52,7 @@
   font-family: sans-serif
 }
 
-.btn_big{
+.btn_big {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
@@ -59,10 +62,75 @@
   width: 150px;
 }
 
-#test{
+#test {
   margin-top: 10px;
 }
 
-#test_end{
+#test_end {
   margin-bottom: -10px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1e1e24;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.clock-container {
+  text-align: center;
+  background: #2a2a32;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+#clock {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4fc3f7;
+  margin-bottom: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-record {
+  background: #4fc3f7;
+  border: none;
+  color: #1e1e24;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.btn-record:hover {
+  background: #29b6f6;
+}
+
+.records-list {
+  margin-top: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.records-list li {
+  background: #33333c;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  border-left: 4px solid #4fc3f7;
 }
