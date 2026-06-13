@@ -65,6 +65,9 @@ $(document).ready(function() {
                         <div class="note-title">${note.title}</div>
                         <div class="note-text">${note.text}</div>
                         <div class="mt-3 text-end">
+                            <button class="btn-archive-note" data-id="${note.id}">
+                            <i class="fas fa-archive"></i> Архив
+                            </button>
                             <button class="btn-edit-note" data-id="${note.id}">
                                 <i class="fas fa-edit"></i> Рєдактіровать
                             </button>

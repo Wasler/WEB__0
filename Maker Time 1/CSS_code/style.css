@@ -97,3 +97,36 @@ body {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
+
+.js-text-animation-color-1 {
+  visibility: hidden;
+  display: inline-block !important;
+}
+
+.space-char {
+  display: inline-block;
+  width: 0.27em;
+}
+
+.js-text-animation-color-1 {
+  visibility: hidden;
+  display: inline-block !important;
+}
+
+.space-char {
+  display: inline-block;
+  width: 0.27em;
+}
+
+.js-text-animation-color-1-child {
+  display: inline-block;
+
+  transition: color 1s ease-in-out; 
+  opacity: 0;
+}
+
+@keyframes fadeInChar {
+  to {
+    opacity: 1;
+  }
+}

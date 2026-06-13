@@ -147,3 +147,20 @@
   background-color: #fff !important;
   pointer-events: auto !important;
 }
+
+.btn-archive-note:hover{
+   background: #ffb74d;
+  color: #1e1e24;
+  border-color: #ffb74d;
+}
+
+.btn-archive-note{
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
