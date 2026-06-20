@@ -94,3 +94,25 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
+
+#game-fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+}
+
+#minecraft-container {
+    width: 100%;
+    height: 100%;
+}
+
+#test-end {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}

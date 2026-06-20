@@ -144,6 +144,7 @@
 .js-text-animation-color-1 {
   visibility: hidden;
   display: inline-block !important;
+  margin-left: 107px;
 }
 
 .space-char {
