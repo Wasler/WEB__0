@@ -1,8 +1,8 @@
 const NotesTemplates = {
     defaultImg: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=500',
 
-    getNoteCard: function(note) {
-        const archiveBtnHtml = note.isArchived 
+    getNoteCard: function (note) {
+        const archiveBtnHtml = note.isArchived
             ? `<button class="btn-archive-note btn-unarchive w-100" data-id="${note.id}"><i class="fas fa-box-open"></i> Распаковать.</button>`
             : `<button class="btn-archive-note w-100" data-id="${note.id}"><i class="fas fa-archive"></i> До архіва</button>`;
 
@@ -39,7 +39,72 @@ const NotesTemplates = {
         `;
     },
 
-    getForm: function(title = '', text = '', img = '', isEdit = false) {
+
+    getRulesModal: function () {
+        return `
+            <div class="custom-modal-form p-2">
+                <p class="mb-3 fs-5 text-center" style="color: #4fc3f7; font-weight: bold;">📜 Правила</p>
+                
+                <ul style="text-align: left; line-height: 1.6; color: #413e37; list-style-type: square;">
+                    <li>Кожна нотатка <b>ПОВИННА</b> мати заголовок та опис.</li>
+                    <li>Можно загрузити з пристрою або за посіланням картинки</li>
+                    <li>Не потрібні нотатки можно закинути до <b>Архіву</b>, щоб осбободити місце.</li>
+                    <li>Дуже секрітний сброс бази даних сайту робитця по жмаканью підряд 3 рази по назві додатку <b>Super Awesome Notes</b> </li>
+                </ul>
+                <hr style="border-color: rgba(255,255,255,0.15);">
+                
+                <div class="mt-3 text-center">
+                    <p class="text-danger small mb-2">Краще не жми кнопку знизу:</p>
+                    <button type="button" id="start-chaos-btn" class="btn btn-danger btn-sm px-4">
+                        Щяс буде капець
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    getAtmosphereModal: function () {
+        return `
+            <div class="custom-modal-form text-white p-2" style="text-align: left;">
+                <p class="mb-3 fs-5 text-center" style="color: #4fc3f7; font-weight: bold;">Настройка атмосфери</p>
+                
+                <div class="mb-3">
+                    <label class="form-label text-white-50 small d-block mb-2">Колір підсвітки інтерфейса:</label>
+                    <div class="d-flex gap-2">
+                        <button class="btn-color-pick" data-color="#00ffff" style="background: #00ffff; width:30px; height:30px; border-radius:50%; border:2px solid #fff;"></button>
+                        <button class="btn-color-pick" data-color="#ff1744" style="background: #ff1744; width:30px; height:30px; border-radius:50%; border:none;"></button>
+                        <button class="btn-color-pick" data-color="#00e676" style="background: #00e676; width:30px; height:30px; border-radius:50%; border:none;"></button>
+                        <button class="btn-color-pick" data-color="#ffb300" style="background: #ffb300; width:30px; height:30px; border-radius:50%; border:none;"></button>
+                        <button class="btn-color-pick" data-color="#d500f9" style="background: #d500f9; width:30px; height:30px; border-radius:50%; border:none;"></button>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label text-white-50 small mb-1">🖼️ Вибрать Обоі:</label>
+                    <select id="select-bg-video" class="form-select bg-dark text-white border-secondary text-sm">
+                        <option value="images/270983.mp4">Стокові обоі</option>
+                        <option value="images/bg2.mp4">Обоі #2</option>
+                        <option value="images/bg3.mp4">Обоі #3</option>
+                        <option value="images/bg4.mp4">Обоі #4</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label text-white-50 small mb-1">🎵 Пісні для лютого вайбкодингу:</label>
+                    <select id="select-bg-music" class="form-select bg-dark text-white border-secondary text-sm">
+                        <option value="">Без пісні🔇</option>
+                        <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Lo-Fi (Трек 1)</option>
+                        <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3">Ембіент (Трек 2)</option>
+                        <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Фокус (Трек 3)</option>
+                        <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3">Ретро (Трек 4)</option>
+                        <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3">Косміческий кодінг (Трек 5)</option>
+                    </select>
+                </div>
+            </div>
+        `;
+    },
+
+    getForm: function (title = '', text = '', img = '', isEdit = false) {
         const isUrl = !img.startsWith('data:image');
         return `
             <div class="p-2 custom-modal-form">
@@ -79,7 +144,7 @@ const NotesTemplates = {
         `;
     },
 
-    getConfirmDelete: function() {
+    getConfirmDelete: function () {
         return `
             <div class="p-3 text-center custom-modal-form">
                 <p class="text-dark fs-5 fw-bold mb-3">Ті хочешь удаліть меня?</p>
@@ -93,7 +158,7 @@ const NotesTemplates = {
 };
 
 const NotesStorage = {
-    getAll: function() {
+    getAll: function () {
         try {
             return JSON.parse(localStorage.getItem('awesome_notes')) || [];
         } catch (e) {
@@ -101,9 +166,9 @@ const NotesStorage = {
         }
     },
 
-    save: function(note) {
+    save: function (note) {
         const notes = this.getAll();
-        note.isArchived = false; 
+        note.isArchived = false;
         notes.push(note);
         try {
             localStorage.setItem('awesome_notes', JSON.stringify(notes));
@@ -113,13 +178,13 @@ const NotesStorage = {
         }
     },
 
-    update: function(id, updatedData) {
+    update: function (id, updatedData) {
         let notes = this.getAll();
         notes = notes.map(note => note.id == id ? { ...note, ...updatedData } : note);
         localStorage.setItem('awesome_notes', JSON.stringify(notes));
     },
 
-    toggleArchive: function(id) {
+    toggleArchive: function (id) {
         let status = false;
         let notes = this.getAll();
         notes = notes.map(note => {
@@ -130,115 +195,115 @@ const NotesStorage = {
             return note;
         });
         localStorage.setItem('awesome_notes', JSON.stringify(notes));
-        return status; 
+        return status;
     },
 
-    delete: function(id) {
+    delete: function (id) {
         let notes = this.getAll();
         notes = notes.filter(note => note.id != id);
         localStorage.setItem('awesome_notes', JSON.stringify(notes));
     },
 
-    clearAll: function() {
+    clearAll: function () {
         localStorage.removeItem('awesome_notes');
     }
 };
 
-(function() {
-  const textElements = document.querySelectorAll(".js-text-animation-color-1");
-  const animatedElements = new Map();
+(function () {
+    const textElements = document.querySelectorAll(".js-text-animation-color-1");
+    const animatedElements = new Map();
 
-  const colors = [
-    "#FF5733", 
-    "#33FF57", 
-    "#3357FF", 
-    "#FF33A8", 
-    "#33FFF5", 
-    "#F5FF33", 
-    "#FF8C00", 
-    "#8A2BE2"  
-  ];
-  
- 
-  const colorChangeInterval = 300; 
+    const colors = [
+        "#FF5733",
+        "#33FF57",
+        "#3357FF",
+        "#FF33A8",
+        "#33FFF5",
+        "#F5FF33",
+        "#FF8C00",
+        "#8A2BE2"
+    ];
 
-  function getRandomElement(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animatedElements.get(entry.target)) {
-        
-        (function(element) {
-          const originalContent = element.cloneNode(true);
-          element.innerHTML = "";
-          
-          const childClassName = "js-text-animation-color-1-child";
-          const appearanceDelay = 0.05; 
-          let delay = 0;
+    const colorChangeInterval = 300;
 
-          const charSpans = [];
-          
-          const walker = document.createTreeWalker(originalContent, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, null, false);
-          let node;
-          
-          while (node = walker.nextNode()) {
-            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-              let textContent = node.textContent;
+    function getRandomElement(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
 
-              if (charSpans.length === 0) textContent = textContent.trimStart(); 
-              
-              textContent.split("").forEach(char => {
-                const charSpan = document.createElement("span");
-                charSpan.className = childClassName;
-                if (char === " ") charSpan.classList.add("space-char");
-                charSpan.textContent = char;
-                
-                charSpan.style.color = getRandomElement(colors);
-                
-                charSpan.style.animation = `fadeInChar 0.5s forwards ${delay}s`;
-                
-                delay += appearanceDelay;
-                element.appendChild(charSpan);
-                charSpans.push(charSpan);
-              });
-            } else if (node.tagName === "BR") {
-              element.appendChild(document.createElement("br"));
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animatedElements.get(entry.target)) {
+
+                (function (element) {
+                    const originalContent = element.cloneNode(true);
+                    element.innerHTML = "";
+
+                    const childClassName = "js-text-animation-color-1-child";
+                    const appearanceDelay = 0.05;
+                    let delay = 0;
+
+                    const charSpans = [];
+
+                    const walker = document.createTreeWalker(originalContent, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, null, false);
+                    let node;
+
+                    while (node = walker.nextNode()) {
+                        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                            let textContent = node.textContent;
+
+                            if (charSpans.length === 0) textContent = textContent.trimStart();
+
+                            textContent.split("").forEach(char => {
+                                const charSpan = document.createElement("span");
+                                charSpan.className = childClassName;
+                                if (char === " ") charSpan.classList.add("space-char");
+                                charSpan.textContent = char;
+
+                                charSpan.style.color = getRandomElement(colors);
+
+                                charSpan.style.animation = `fadeInChar 0.5s forwards ${delay}s`;
+
+                                delay += appearanceDelay;
+                                element.appendChild(charSpan);
+                                charSpans.push(charSpan);
+                            });
+                        } else if (node.tagName === "BR") {
+                            element.appendChild(document.createElement("br"));
+                        }
+                    }
+
+                    requestAnimationFrame(() => {
+                        element.style.visibility = "visible";
+                    });
+
+
+                    setTimeout(() => {
+                        setInterval(() => {
+
+                            const randomSpan = getRandomElement(charSpans);
+
+                            if (randomSpan.classList.contains('space-char')) return;
+
+                            const currentColor = randomSpan.style.color;
+                            let newColor;
+                            do {
+                                newColor = getRandomElement(colors);
+                            } while (newColor === currentColor);
+
+                            randomSpan.style.color = newColor;
+
+                        }, colorChangeInterval);
+                    }, delay * 100);
+
+                })(entry.target);
+
+                animatedElements.set(entry.target, true);
             }
-          }
-          
-          requestAnimationFrame(() => {
-            element.style.visibility = "visible";
-          });
+        });
+    }, { threshold: 0.25 });
 
-
-          setTimeout(() => {
-            setInterval(() => {
-
-              const randomSpan = getRandomElement(charSpans);
-              
-              if (randomSpan.classList.contains('space-char')) return;
-
-              const currentColor = randomSpan.style.color;
-              let newColor;
-              do {
-                newColor = getRandomElement(colors);
-              } while (newColor === currentColor);
-
-              randomSpan.style.color = newColor;
-
-            }, colorChangeInterval);
-          }, delay * 100);
-
-        })(entry.target);
-        
-        animatedElements.set(entry.target, true);
-      }
+    textElements.forEach(element => {
+        observer.observe(element);
     });
-  }, { threshold: 0.25 });
-        
-  textElements.forEach(element => {
-    observer.observe(element);
-  });
 })();

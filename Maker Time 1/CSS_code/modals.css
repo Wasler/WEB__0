@@ -18,13 +18,20 @@
   max-height: 90%;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   animation: zoomAnimation 0.25s ease-out;
 }
 
 @keyframes zoomAnimation {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .ajs-dialog {
@@ -36,9 +43,30 @@
   display: none !important;
 }
 
-.custom-modal-form input, 
+.custom-modal-form input,
 .custom-modal-form textarea {
   color: #000 !important;
   background-color: #fff !important;
   pointer-events: auto !important;
+}
+
+.ajs-footer {
+  background: rgba(30, 30, 36, 0.95) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 10px 20px !important;
+}
+
+.ajs-btn-ok {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  padding: 6px 18px !important;
+  transition: all 0.2s !important;
+}
+
+.ajs-btn-ok:hover {
+  background: #4fc3f7 !important;
+  color: #1e1e24 !important;
+  border-color: #4fc3f7 !important;
 }
