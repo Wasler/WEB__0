@@ -85,7 +85,6 @@ const NotesTemplates = {
                         <option value="images/270983.mp4">Стокові обоі</option>
                         <option value="images/bg2.mp4">Обоі #2</option>
                         <option value="images/bg3.mp4">Обоі #3</option>
-                        <option value="images/bg4.mp4">Обоі #4</option>
                     </select>
                 </div>
 
